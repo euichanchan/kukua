@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
+
+      <!-- Bootstrap CSS -->
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+         crossorigin="anonymous"
+      />
+
+      <title>교재 확인용</title>
+      <link rel="stylesheet" href="style.css" />
+
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <script
+         type="text/javascript"
+         src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6184cff04ec7e1f7"
+      ></script>
+   </head>
+
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light nav-distance">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">전기공학과 교재 확인</a>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+            >
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                     >
+                        Dropdown
+                     </a>
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link disabled">Disabled</a>
+                  </li>
+               </ul>
+               <form class="d-flex">
+                  <input
+                     class="form-control me-2"
+                     type="search"
+                     placeholder="Search"
+                     aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+               </form>
+            </div>
+         </div>
+      </nav>
+      <section class="section">
+         <h1 class="title">궁금한 책이 있으면 찍어주세요!</h1>
+         <h2 class="subtitle">간단한 정보들을 알려드립니다!</h2>
+         <h3 class="number1 mt-2 d-flex flex-row-reverse">주간:053-810-2480</h3>
+         <h4 class="number2 mt-2 d-flex flex-row-reverse">야간:053-810-2580</h4>
+         <h5 class="number3 mt-2 d-flex flex-row-reverse">전기과 복사실:053-811-5265</h5>
+      </section>
+      <section class="kyobo">
+         <div class="container mt-5 kyobo-cover d-flex flex-row-reverse">
+            <a
+               href="http://www.kyobobook.co.kr/categoryRenewal/categoryMain.laf?linkClass=50&mallGb=KOR&orderClick=sgF"
+               class="kyobo-link"
+               >교보문고 사이트 바로가기</a
+            >
+         </div>
+      </section>
+
+      <script
+         class="jsbin"
+         src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+      ></script>
+      <div class="container file-upload">
+         <div class="image-upload-wrap">
+            <input
+               class="file-upload-input"
+               type="file"
+               onchange="readURL(this);"
+               accept="image/*"
+            />
+            <div class="drag-text">
+               <h3>책 사진을 올려주세요!</h3>
+            </div>
+         </div>
+         <div class="file-upload-content">
+            <img class="file-upload-image" id="book-image" src="#" alt="your image" />
+
+            <div id="loading" class="animated bounce">
+               <div class="spinner-border" role="status">
+                  <span class="sr-only"></span>
+               </div>
+               <p class="text-center">사진을 분석중입니다.</p>
+            </div>
+
+            <p class="result-message"></p>
+
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+            <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox_ve7d"></div>
+
+            <div class="image-title-wrap">
+               <button type="button" onclick="removeUpload()" class="remove-image">
+                  사진 지우기 <span class="image-title">다시 시도하기</span>
+               </button>
+            </div>
+         </div>
+      </div>
+
+      <div id="disqus_thread"></div>
+      <script>
+         /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+         /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+         (function () {
+            // DON'T EDIT BELOW THIS LINE
+            var d = document,
+               s = d.createElement('script');
+            s.src = 'https://ynu-volt-major-6.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+         })();
+      </script>
+      <noscript
+         >Please enable JavaScript to view the
+         <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript
+      >
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+         crossorigin="anonymous"
+      ></script>
+
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+      <script>
+         function readURL(input) {
+            if (input.files && input.files[0]) {
+               var reader = new FileReader();
+               reader.onload = function (e) {
+                  $('.image-upload-wrap').hide();
+                  $('#loading').show();
+                  $('.file-upload-image').attr('src', e.target.result);
+                  $('.file-upload-content').show();
+                  $('.image-title').html(input.files[0].name);
+               };
+               reader.readAsDataURL(input.files[0]);
+               init().then(() => {
+                  console.log('hello');
+                  predict();
+                  $('#loading').hide();
+               });
+            } else {
+               removeUpload();
+            }
+         }
+
+         function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+         }
+         $('.image-upload-wrap').bind('dragover', function () {
+            $('.image-upload-wrap').addClass('image-dropping');
+         });
+         $('.image-upload-wrap').bind('dragleave', function () {
+            $('.image-upload-wrap').removeClass('image-dropping');
+         });
+      </script>
+      <script type="text/javascript">
+         // More API functions here:
+         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+         // the link to your model provided by Teachable Machine export panel
+         const URL = 'https://teachablemachine.withgoogle.com/models/QsQU413qG/';
+
+         let model, webcam, labelContainer, maxPredictions;
+
+         // Load the image model and setup the webcam
+         async function init() {
+            const modelURL = URL + 'model.json';
+            const metadataURL = URL + 'metadata.json';
+
+            // load the model and metadata
+            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+            // or files from your local hard drive
+            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            for (let i = 0; i < maxPredictions; i++) {
+               // and class labels
+            }
+         }
+
+         async function predict() {
+            var image = document.getElementById('book-image');
+            const prediction = await model.predict(image, false);
+            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            console.log(prediction[0].className);
+            var resultBook, resultExplain, resultClass;
+            switch (prediction[0].className) {
+               case '기체전자와고전압공학':
+                  resultBook = '기체전자와 고전압공학 (전공선택)';
+                  resultExplain = '3학년 1학기 (3학점)';
+                  resultClass =
+                     '고전압에 의한 기체 및 각종 유전체에 있어서의 전기전도나 절연파괴 방지를 위한 전자 및 이온의 거동에 대한 고찰';
+                  break;
+               case '공업수학':
+                  resultBook = '공업수학 (전공필수)';
+                  resultExplain = '2학년 1학기 (3학점)';
+                  resultClass =
+                     '전공 분야 학과목들을 공부하는데 가장 중요한 도구가 될 공업용 수학을 공부하는 과목이다.';
+                  break;
+               case '공학과경영':
+                  resultBook = '공학과 경영 (교양필수)';
+                  resultExplain = '3학년 1학기 (3학점)';
+                  resultClass =
+                     '공학도의 입장에서 필요한 경영학적 기초 필수 지식을 학습한다.';
+                  break;
+               case '전기공학기초실험':
+                  resultBook = '전기공학 기초실험 (전공필수)';
+                  resultExplain = '2학년 1~2학기 (1학점)';
+                  resultClass =
+                     '실험을 통하여 전기·전자공학에 대한 기초를 튼튼히 다지고, 관련 전공분야에 대하여 충분한 이해를 돕는데 그 목적을 두고 있다.';
+                  break;
+               case '논리회로':
+                  resultBook = '논리회로 (전공필수)';
+                  resultExplain = '2학년 1학기 (3학점)';
+                  resultClass =
+                     '디지털의 정의와 부울 대수의 기초 개념을 알아보고, AND, OR, NOT 게이트를 이용한 조합 회로 및 Flip/flop에 기반한 순차회로의 해석 및 설계 기법에 대해 공부한다.';
+                  break;
+               case '배전계통운용':
+                  resultBook = '배전계통운용 (전공필수)';
+                  resultExplain = '3학년 2학기 (3학점)';
+                  resultClass =
+                     '전력전송공학과 함께 생산된 전기에너지를 수용가까지 효율적으로 전달하여 안정적이며 효율적 이용 및 운용할 수 있도록 강의내용을 구성';
+                  break;
+               case '전기설비설계':
+                  resultBook = '전기설비설계 (전공선택)';
+                  resultExplain = '3학년 1학기 (3학점)';
+                  resultClass =
+                     '- 전기설비의 개요, 배선의 원칙과 기본사항, 수변전설비, 예비전원설비, 배전설비, 조명설비, 동력설비, 재료와 공구, 전기공사의 시공방법, 반송설비, 정보통신설비 등을 공부한다.';
+                  break;
+               case '수치해석':
+                  resultBook = '수치해석 (전공선택)';
+                  resultExplain = '2학년 2학기 (3학점)';
+                  resultClass =
+                     '컴퓨터를 이용하여 복잡한 공학 문제를 풀기 위하여 아래와 같은 다양한 수치적 해석 방법에 대하여 이론과 실습을 통해 습득한다.';
+                  break;
+               case '신에너지공학':
+                  resultBook = '신에너지 공학 (전공선택)';
+                  resultExplain = '2학년 2학기 (3학점)';
+                  resultClass =
+                     '에너지원과 신재생 에너지원에 대한 전반적인 내용을 다루고 에너지원의 기본 원리, 현재 상황 및 해결해야 할 사안들을 공부한다.';
+                  break;
+               case '자동제어':
+                  resultBook = '자동제어 (전공필수)';
+                  resultExplain = '3학년 1학기 (3학점)';
+                  resultClass =
+                     '동적 시스템의 되먹임 제어에 대한 기본 원리와 관련된 해석기술, 그리고 제어기 설계를 통하여 자동제어에 대한 기본 개념을 공부한다.';
+                  break;
+               case '전기기기':
+                  resultBook = '전기기기(1),(2) (전공필수,전공선택)';
+                  resultExplain = '3학년 1~2학기 (3학점)';
+                  resultClass =
+                     '변압기의 원리, 운전방법, 종류, 등가회로 직류기의 원리, 종류, 운전방법, 교류기, 유도기, 동기기를 다룬다. ';
+                  break;
+               case '전력전송공학':
+                  resultBook = '전력전송공학 (전공필수)';
+                  resultExplain = '3학년 1학기 (3학점)';
+                  resultClass =
+                     '송전계통의 해석을 위해 송전선로의 선로정수, 고장해석, 전력 조류 등을 다룬다.';
+                  break;
+               case '전력전자공학':
+                  resultBook = '전력전자공학 (전공필수)';
+                  resultExplain = '3학년 2학기 (3학점)';
+                  resultClass =
+                     '반도체 소자인 다이오드, 싸이리스터, 모스펫 등을 이용한 단상, 3상 회로의 해석, 인버터, 컨버터 등을 통해 전력변환을 배운다.';
+                  break;
+               case '전자기학':
+                  resultBook = '전자기학(1),(2) (전공필수)';
+                  resultExplain = '2학년 1~2학기 (3학점)';
+                  resultClass =
+                     '벡터 미적분학, 정전기학에 대해 배운다. 최종적으로는 맥스웰 방정식의 이해를 목표로 한다.';
+                  break;
+               case '전자회로':
+                  resultBook = '전자회로 (전공선택)';
+                  resultExplain = '2학년 2학기 (3학점)';
+                  resultClass =
+                     '다이오드, 트랜지스터, op amp 역사, 구조, 동작 원리, 기능을 배워 반도체 소자에 대한 이해를 한 후, 각 반도체 소자들을 활용한 회로 해석 및 설계';
+                  break;
+               case '현대제어':
+                  resultBook = '현대제어 (전공선택)';
+                  resultExplain = '4학년 2학기 (3학점)';
+                  resultClass =
+                     '제어시스템의 수학적 모델, 과도응답과 정상상태 응답 해석, PID제어기, 상태공간 에서의 제어시스템 해석 및 설계 등을 공부한다.';
+                  break;
+               case '회로이론':
+                  resultBook = '회로이론(1) (전공필수)';
+                  resultExplain = '2학년 1학기 (3학점)';
+                  resultClass =
+                     '전압 전류의 개념, SI단위, 여러 가지 등가회로를 만드는 방법, KVL, KCL, Ohm Law 등을 배운다.';
+                  break;
+               case '회로이론보라색':
+                  resultBook = '회로이론(2) (전공필수)';
+                  resultExplain = '2학년 2학기 (3학점)';
+                  resultClass =
+                     '리액턴스, 임피던스, 페이저, 위상, 역률, 실효치, Y-Delta 결선, 을 배운다.';
+                  break;
+               default:
+                  resultBook = '알수없는 책입니다';
+                  resultExplain = '다른 사진으로 다시 시도해주세요';
+                  resultClass = '없는 교재는 업데이트 예정입니다';
+            }
+            var Book =
+               "<div class='" +
+               prediction[0].className +
+               "-result-Book'>" +
+               resultBook +
+               '</div>';
+            var Explain = "<div class='book-explain pt-2'>" + resultExplain + '</div>';
+            var Class =
+               "<div class='" +
+               prediction[0].className +
+               "-result-Explain pt-2 pb-2'>" +
+               resultClass +
+               '</div>';
+            $('.result-message').html(Book + Explain + Class);
+            for (let i = 0; i < maxPredictions; i++) {
+               const classPrediction =
+                  prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+            }
+         }
+      </script>
+   </body>
+   <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ -->
+</html>

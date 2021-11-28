@@ -1,0 +1,378 @@
+body {
+  font-family: 'Jua', sans-serif;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  color: #35465d;
+}
+
+.file-upload {
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 15% 3%;
+  border-radius: 40px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #342F36;
+  position: relative;
+  object-fit: contain;
+  border-radius: 80px;
+  background-color:#E0ECF8;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #5EB8F5;
+  border: 4px dashed #342F36;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #342F36;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 40%;
+  max-width: 40%;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.nav-distance {
+   padding: 2.1% 7.7%;
+}
+.navbar-light .navbar-brand {
+   font-family: NanumSquareR;
+   line-height: 1.68;
+   text-align: left;
+   color: #342F36;
+}
+.section {
+   margin-top: 100px;
+}
+.title {
+   font-family: NanumSquareR;
+   line-height: 1.67;
+   text-align: center;
+   color: #342F36;
+}
+
+.subtitle {
+   font-family: NanumSquareR;
+   line-height: 1.53;
+   text-align: center;
+   color: #342F36;
+}
+.number1 {
+   line-height: 1.53;
+
+    color: #071418;
+   font-size:1.5rem;
+}
+.number2 {
+   line-height: 1.53;
+
+    color: #071418;
+   font-size:1.5rem;
+}
+.number3 {
+   line-height: 1.53;
+
+    color: #071418;
+   font-size:1.5rem;
+}
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+   .navbar-brand {
+      font-size: 2rem;
+   }
+}
+.kyobo-link {
+    font-size: 1.5rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #f73737;
+    text-decoration: underline;
+}
+
+.kyobo-link:hover {
+    font-size: 1.5rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #f73737;
+    text-decoration: underline;
+}
+.result-message {
+    font-size: 2rem;
+}
+
+.book-explain {
+   font-size: 1.8rem;
+   color: #B18904;
+}
+
+.기체전자와고전압공학-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.기체전자와고전압공학-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.공업수학-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.공업수학-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+.공학과경영-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.공학과경영-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전기공학기초실험-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전기공학기초실험-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.논리회로-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.논리회로-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.배전계통운용-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.배전계통운용-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전기설비설계-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전기설비설계-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.수치해석-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.수치해석-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.신에너지공학-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.신에너지공학-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.자동제어-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.자동제어-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전기기기-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전기기기-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전력전송공학-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전력전송공학-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전력전자공학-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전력전자공학-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전자기학-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전자기학-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.전자회로-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.전자회로-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.현대제어-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.현대제어-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.회로이론-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.회로이론-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
+
+
+.회로이론보라색-result-Explain {
+   font-size: 1.5rem;
+   color: #424242;
+}
+.회로이론보라색-result-Book {
+   font-size: 1.8rem;
+   color: #0080FF;
+}
